@@ -1,0 +1,117 @@
+---
+title: '2ª Atividade Avaliativa M1: Exercício de Data.frames'
+author: "Pietra Paz L. de A. Pinheiro - 22401571"
+date: "`r Sys.Date()`"
+output: 
+  rmdformats::readthedown
+  
+---
+
+## **2ªAtividade Avaliativa**
+
+**Parte 1: Perguntas Teóricas**
+--
+1. Explique o que é um data.frame no R e como ele difere de uma matriz.
+2. Descreva os operadores básicos no R e dê um exemplo de como cada um pode ser usado.
+3. Explique o que são operadores relacionais e lógicos. Dê exemplos.
+
+**Parte 2: Prática com data.frame**
+--
+1. Crie um data.frame chamado **estudantes** com as seguintes colunas: **nome, idade, curso** e **nota_final**. 
+
+Insira 5 registros no data.frame desta forma:
+
+```{r, echo=FALSE, out.width='42%'}
+  knitr::include_graphics("https://raw.githubusercontent.com/pietrapaz/r_dados/main/atividade_avaliativa2/imagem_dataframe.png")
+```
+
+2. Utilize operadores relacionais para selecionar estudantes com **nota_final** maior ou igual a 7.0.
+
+3. Use operadores lógicos para encontrar estudantes com idade menor que 25 anos e nota final maior ou igual a 7.0.
+
+**Parte 3: Análise e Manipulação de Dados**
+--
+1. Calcule a média das notas finais dos estudantes.
+
+2. Adicione uma nova coluna ao data.frame **estudantes** chamada **aprovado**, que deve conter valores booleanos 
+(**TRUE** para estudantes com nota final maior ou igual a 7 e **FALSE** para os demais).
+
+3. Utilize operadores básicos para calcular a porcentagem de estudantes aprovados no curso.
+
+**Dataframe**
+--
+**O que é um dataframe?**
+
+Dataframe é .......
+
+
+**Dataframe X Matriz** 
+
+Já uma matriz é .......
+
+**Operadores**
+--
+--
+**Operadores básicos**
+Os operadores básicos são teste teste teste teste teste teste teste teste teste teste.....
+--
+--
+**Operadores relacionais**
+Os operadores relacionais
+--
+**Operadores lógicos**
+Os operadores lógicos 
+
+
+## **Operadores** {.tabset}
+
+### Básicos
+
+Conteúdo da primeira aba.
+
+### Relacionais
+
+Conteúdo da segunda aba.
+
+### Lógicos
+
+Conteúdo etc etc
+
+## Outra Seção {.tabset}
+
+### Aba 3
+
+Conteúdo da terceira aba.
+
+### Aba 4
+
+Conteúdo da quarta aba.
+
+### Aba 1 {.tabset}
+
+#### Sub-Aba 1
+
+Conteúdo da sub-aba 1.
+
+#### Sub-Aba 2
+
+Conteúdo da sub-aba 2.
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## **Including Plots**
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
