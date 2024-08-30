@@ -1,36 +1,36 @@
 ---
 title: '2ª Atividade Avaliativa M1: Exercício de Data.frames'
-author: "Pietra Paz L. de A. Pinheiro - 22401571"
+author: "Pietra Paz L. de A. Pinheiro | 22401571"
 date: "`r Sys.Date()`"
 output: 
   rmdformats::readthedown
   
 ---
 
-## **2ªAtividade Avaliativa**
+## Atividade {.tabset}
+
+### Proposta
 
 **Parte 1: Perguntas Teóricas**
---
+
 1. Explique o que é um data.frame no R e como ele difere de uma matriz.
 2. Descreva os operadores básicos no R e dê um exemplo de como cada um pode ser usado.
 3. Explique o que são operadores relacionais e lógicos. Dê exemplos.
 
 **Parte 2: Prática com data.frame**
---
+
 1. Crie um data.frame chamado **estudantes** com as seguintes colunas: **nome, idade, curso** e **nota_final**. 
 
 Insira 5 registros no data.frame desta forma:
 
-```{r, echo=FALSE, out.width='42%'}
-  knitr::include_graphics("https://raw.githubusercontent.com/pietrapaz/r_dados/main/atividade_avaliativa2/imagem_dataframe.png")
-```
+![](https://raw.githubusercontent.com/pietrapaz/r_dados/main/atividade_avaliativa2/imagem_dataframe.png)
 
 2. Utilize operadores relacionais para selecionar estudantes com **nota_final** maior ou igual a 7.0.
 
 3. Use operadores lógicos para encontrar estudantes com idade menor que 25 anos e nota final maior ou igual a 7.0.
 
 **Parte 3: Análise e Manipulação de Dados**
---
+
 1. Calcule a média das notas finais dos estudantes.
 
 2. Adicione uma nova coluna ao data.frame **estudantes** chamada **aprovado**, que deve conter valores booleanos 
@@ -38,80 +38,83 @@ Insira 5 registros no data.frame desta forma:
 
 3. Utilize operadores básicos para calcular a porcentagem de estudantes aprovados no curso.
 
-**Dataframe**
---
+### Perguntas Teóricas {.tabset}
+
+#### **Dataframe**
+
+**Parte 1**
+
 **O que é um dataframe?**
 
-Dataframe é .......
+Dataframe é uma estrutura de dados no R em que é possível armazenar valores em linhas e colunas, como uma tabela.
 
+```{r}
+# exemplo de dataframe 
+
+```
 
 **Dataframe X Matriz** 
 
-Já uma matriz é .......
+Já uma matriz é semelhante ao dataframe, porém, só pode ser armazenado um tipo de dado, enquanto no dataframe tanto strings como valores inteiros, por exemplo, podem ser armazenados.
 
-**Operadores**
---
---
+```{r}
+# exemplo de matriz
+
+```
+
+```{r}
+# exemplo ao tentar inserir mais de um tipo na matriz
+
+```
+
+#### **Operadores**
+
+**Parte 1**
+
 **Operadores básicos**
-Os operadores básicos são teste teste teste teste teste teste teste teste teste teste.....
---
---
+
+Os operadores básicos são...
+
 **Operadores relacionais**
-Os operadores relacionais
---
+
+Os operadores relacionais...
+
 **Operadores lógicos**
-Os operadores lógicos 
+
+Os operadores lógicos...
+
+## Prática com dataframe
+
+```{r}
+# Parte 2: Prática com data.frame
+
+# criando o dataframe 
+estudantes <- data.frame(
+  nome = c("Ana", "Bruno", "Carlos", "Diana", "Eduardo"),
+  idade = c(20, 22, 23, 19, 25),
+  curso = c("Ciência de Dados", "Engenharia", "Matemática", "Ciência da Computação", "Estatística"),
+  nota_final = c(8.5, 5.0, 7.0, 9.0, 6.5)
+)
+
+# estudantes que obtiveram **nota_final** maior ou igual a 7.0 
+# (utilize operadores relacionais para selecionar estudantes com **nota_final** maior ou igual a 7.0)
 
 
-## **Operadores** {.tabset}
+# estudantes com idade menor 
+# (use operadores lógicos para encontrar estudantes com idade menor que 25 anos e nota final maior ou igual a 7.0)
+  
 
-### Básicos
+# Parte 3: Análise e Manipulação de Dados
+# calculando a média das notas finais dos estudantes
 
-Conteúdo da primeira aba.
-
-### Relacionais
-
-Conteúdo da segunda aba.
-
-### Lógicos
-
-Conteúdo etc etc
-
-## Outra Seção {.tabset}
-
-### Aba 3
-
-Conteúdo da terceira aba.
-
-### Aba 4
-
-Conteúdo da quarta aba.
-
-### Aba 1 {.tabset}
-
-#### Sub-Aba 1
-
-Conteúdo da sub-aba 1.
-
-#### Sub-Aba 2
-
-Conteúdo da sub-aba 2.
+# adicionando uma nova coluna contendo TRUE para nota_final >= 7 e FALSE para os demais
+# nome data.frame: **estudantes** nome coluna: **aprovado**, que deve conter valores booleanos (**TRUE** para estudantes com nota final maior ou igual a 7 e **FALSE** para os demais).
 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# calculando porcentagem de estudantes aprovados no curso
+# Utilize operadores básicos para calcular a porcentagem de estudantes aprovados no curso.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+
+
 ```
-
-## **Including Plots**
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
