@@ -4,43 +4,37 @@ author: "Pietra Paz L. de A. Pinheiro | 22401571"
 date: "`r Sys.Date()`"
 output: 
   rmdformats::readthedown
-  
 ---
 
-## Atividade {.tabset}
-
-### Proposta
+## **Proposta**
 
 **Parte 1: Perguntas Teóricas**
 
-1. Explique o que é um data.frame no R e como ele difere de uma matriz.
-2. Descreva os operadores básicos no R e dê um exemplo de como cada um pode ser usado.
-3. Explique o que são operadores relacionais e lógicos. Dê exemplos.
+1.  Explique o que é um data.frame no R e como ele difere de uma matriz.
+2.  Descreva os operadores básicos no R e dê um exemplo de como cada um pode ser usado.
+3.  Explique o que são operadores relacionais e lógicos. Dê exemplos.
 
 **Parte 2: Prática com data.frame**
 
-1. Crie um data.frame chamado **estudantes** com as seguintes colunas: **nome, idade, curso** e **nota_final**. 
+1.  Crie um data.frame chamado **estudantes** com as seguintes colunas: **nome, idade, curso** e **nota_final**.
 
 Insira 5 registros no data.frame desta forma:
 
 ![](https://raw.githubusercontent.com/pietrapaz/r_dados/main/atividade_avaliativa2/imagem_dataframe.png)
 
-2. Utilize operadores relacionais para selecionar estudantes com **nota_final** maior ou igual a 7.0.
+2.  Utilize operadores relacionais para selecionar estudantes com **nota_final** maior ou igual a 7.0.
 
-3. Use operadores lógicos para encontrar estudantes com idade menor que 25 anos e nota final maior ou igual a 7.0.
+3.  Use operadores lógicos para encontrar estudantes com idade menor que 25 anos e nota final maior ou igual a 7.0.
 
 **Parte 3: Análise e Manipulação de Dados**
 
-1. Calcule a média das notas finais dos estudantes.
+1.  Calcule a média das notas finais dos estudantes.
 
-2. Adicione uma nova coluna ao data.frame **estudantes** chamada **aprovado**, que deve conter valores booleanos 
-(**TRUE** para estudantes com nota final maior ou igual a 7 e **FALSE** para os demais).
+2.  Adicione uma nova coluna ao data.frame **estudantes** chamada **aprovado**, que deve conter valores booleanos (**TRUE** para estudantes com nota final maior ou igual a 7 e **FALSE** para os demais).
 
-3. Utilize operadores básicos para calcular a porcentagem de estudantes aprovados no curso.
+3.  Utilize operadores básicos para calcular a porcentagem de estudantes aprovados no curso.
 
-### Perguntas Teóricas {.tabset}
-
-#### **Dataframe**
+## **Atividade**
 
 **Parte 1**
 
@@ -53,7 +47,7 @@ Dataframe é uma estrutura de dados no R em que é possível armazenar valores e
 
 ```
 
-**Dataframe X Matriz** 
+**Dataframe X Matriz**
 
 Já uma matriz é semelhante ao dataframe, porém, só pode ser armazenado um tipo de dado, enquanto no dataframe tanto strings como valores inteiros, por exemplo, podem ser armazenados.
 
@@ -67,23 +61,113 @@ Já uma matriz é semelhante ao dataframe, porém, só pode ser armazenado um ti
 
 ```
 
-#### **Operadores**
+## **Operadores** {.tabset}
 
 **Parte 1**
 
-**Operadores básicos**
+### **Operadores básicos** {.tabset}
 
-Os operadores básicos são...
+Os operadores básicos servem para realizar operações simples. São eles:
 
-**Operadores relacionais**
+| **Nome**        | **Símbolo** |
+|-----------------|-------------|
+| Adição          | \+          |
+| Subtração       | \-          |
+| Multiplicação   | \*          |
+| Divisão         | /           |
+| Divisão Inteira | %/%         |
+| Módulo          | %%          |
+| Potenciação     | \^ ou \*\*  |
 
-Os operadores relacionais...
+```{r, comment=""}
+# exemplo de operadores básicos
+x <- 10
+y <- 2
 
-**Operadores lógicos**
+soma <- x + y
+print(soma)
 
-Os operadores lógicos...
+subtracao <- x - y
+print(subtracao)
 
-## Prática com dataframe
+multiplicacao <- x * y
+print(multiplicacao)
+
+divisao <- x / y
+print(divisao)
+
+divisao_inteira <- x %/% y
+print(divisao_inteira)
+
+# resto da divisao
+modulo <- x %% y
+print(modulo)
+
+potenciacao <- x ^ y
+print(potenciacao)
+
+potenciacao2 <- x ** y
+print(potenciacao2)
+
+# ha uma funcao para o calculo da raiz quadrada
+raiz_quadrada <- sqrt(x)
+print(raiz_quadrada)
+```
+
+### **Operadores relacionais** {.tabset}
+
+Os operadores relacionais servem para comparar valores. São eles:
+
+| **Nome**         | **Símbolo** |
+|------------------|-------------|
+| Maior que        | >           |
+| Maior ou igual a | >=          |
+| Menor que        | <           |
+| Menor ou igual a | <=          |
+| Igual a          | ==          |
+| Diferente de     | !=          |
+
+```{r, comment=""}
+# exemplo de operadores relacionais
+10 > 2
+10 < 2
+10 >= 2
+10 <= 2
+10 == 2
+10 != 2
+```
+
+### **Operadores lógicos** {.tabset}
+
+Os operadores lógicos são utilizados para filtrar, selecionar valores específicos e atender a certas condições. São eles:
+
+| **Nome**               | **Símbolo** |
+|------------------------|-------------|
+| Condição AND (E)       | `&`         |
+| Condição OR (OU)       | `|`         |
+| Condição NOT (negação) | `!`         |
+
+```{r}
+# exemplo de operadores lógicos
+# só é TRUE se ambas as condições forem verdadeiras
+(10 > 2) & (5 > 3)
+(10 > 2) & (5 < 3)
+(10 < 2) & (5 < 3)
+
+# só é TRUE se pelo menos uma condição for verdadeira
+(10 > 2) | (5 > 3)
+(10 > 2) | (5 < 3)
+(10 < 2) | (5 < 3)
+
+# inverte o valor da condição
+(10 > 2)
+!(10 > 2)
+
+(5 < 3)
+!(5 < 3)
+```
+
+## Prática com dataframe 
 
 ```{r}
 # Parte 2: Prática com data.frame
@@ -115,6 +199,9 @@ estudantes <- data.frame(
 # Utilize operadores básicos para calcular a porcentagem de estudantes aprovados no curso.
 
 
+
+
+```
 
 
 ```
