@@ -4,11 +4,12 @@
 # Parte 1: perguntas teóricas
 # exemplo de dataframe 
 lista_mercado <- data.frame(
-  frutas = c("Ameixa", "Banana", "Limão", NA),
-  bebidas = c("Suco", "Leite", NA, NA),
-  itens_de_higiene = c("Pasta de dente", "Desodorante", "Shampoo", "Fio dental")
+  itens_de_higiene = c("Pasta de dente", "Desodorante", "Shampoo", "Fio dental"),
+  quantidade = c(5, 2, 3, 5)
 )
 print(lista_mercado)
+class(lista_mercado$itens_de_higiene)
+class(lista_mercado$quantidade)
 
 # exemplo de matriz
 matriz <- matrix(c("Melão", "Melancia", "Maçã", "Morango", "Manga", "Mamão"), nrow=3, ncol = 2)
