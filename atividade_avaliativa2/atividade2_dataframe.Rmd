@@ -45,11 +45,12 @@ Dataframe é uma estrutura de dados no R em que é possível armazenar valores e
 ```{r, comment=""}
 # exemplo de dataframe 
 lista_mercado <- data.frame(
-  frutas = c("Ameixa", "Banana", "Limão", NA),
-  bebidas = c("Suco", "Leite", NA, NA),
-  itens_de_higiene = c("Pasta de dente", "Desodorante", "Shampoo", "Fio dental")
+  itens_de_higiene = c("Pasta de dente", "Desodorante", "Shampoo", "Fio dental"),
+  quantidade = c(5, 2, 3, 5)
 )
 print(lista_mercado)
+class(lista_mercado$itens_de_higiene)
+class(lista_mercado$quantidade)
 ```
 
 **Dataframe X Matriz**
