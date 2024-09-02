@@ -42,23 +42,34 @@ Insira 5 registros no data.frame desta forma:
 
 Dataframe é uma estrutura de dados no R em que é possível armazenar valores em linhas e colunas, como uma tabela.
 
-```{r}
+```{r, comment=""}
 # exemplo de dataframe 
-
+lista_mercado <- data.frame(
+  frutas = c("Ameixa", "Banana", "Limão", NA),
+  bebidas = c("Suco", "Leite", NA, NA),
+  itens_de_higiene = c("Pasta de dente", "Desodorante", "Shampoo", "Fio dental")
+)
+print(lista_mercado)
 ```
 
 **Dataframe X Matriz**
 
 Já uma matriz é semelhante ao dataframe, porém, só pode ser armazenado um tipo de dado, enquanto no dataframe tanto strings como valores inteiros, por exemplo, podem ser armazenados.
 
-```{r}
+```{r, comment=""}
 # exemplo de matriz
-
+matriz <- matrix(c("Melão", "Melancia", "Maçã", "Morango", "Manga", "Mamão"), nrow=3, ncol = 2)
+print(matriz)
 ```
 
-```{r}
+```{r, comment=""}
 # exemplo ao tentar inserir mais de um tipo na matriz
+matriz2 <- matrix(c(1,2,3,"a", "b", "c"), nrow = 2, ncol = 3)
 
+print(matriz2)
+
+# os numeros se tornam caracteres
+class(matriz2[1,1])
 ```
 
 ## **Operadores** {.tabset}
@@ -71,13 +82,13 @@ Os operadores básicos servem para realizar operações simples. São eles:
 
 | **Nome**        | **Símbolo** |
 |-----------------|-------------|
-| Adição          | \+          |
-| Subtração       | \-          |
-| Multiplicação   | \*          |
-| Divisão         | /           |
-| Divisão Inteira | %/%         |
-| Módulo          | %%          |
-| Potenciação     | \^ ou \*\*  |
+| Adição          | `+`         |
+| Subtração       | `-`         |
+| Multiplicação   | `*`         |
+| Divisão         | `/`         |
+| Divisão Inteira | `%/%`       |
+| Módulo          | `%%`        |
+| Potenciação     | `^` ou `**` |
 
 ```{r, comment=""}
 # exemplo de operadores básicos
@@ -120,12 +131,12 @@ Os operadores relacionais servem para comparar valores. São eles:
 
 | **Nome**         | **Símbolo** |
 |------------------|-------------|
-| Maior que        | >           |
-| Maior ou igual a | >=          |
-| Menor que        | <           |
-| Menor ou igual a | <=          |
-| Igual a          | ==          |
-| Diferente de     | !=          |
+| Maior que        | `>`         |
+| Maior ou igual a | `>=`        |
+| Menor que        | `<`         |
+| Menor ou igual a | `<=`        |
+| Igual a          | `==`        |
+| Diferente de     | `!=`        |
 
 ```{r, comment=""}
 # exemplo de operadores relacionais
@@ -147,7 +158,7 @@ Os operadores lógicos são utilizados para filtrar, selecionar valores específ
 | Condição OR (OU)       | `|`         |
 | Condição NOT (negação) | `!`         |
 
-```{r}
+```{r, comment=""}
 # exemplo de operadores lógicos
 # só é TRUE se ambas as condições forem verdadeiras
 (10 > 2) & (5 > 3)
@@ -169,7 +180,7 @@ Os operadores lógicos são utilizados para filtrar, selecionar valores específ
 
 ## Prática com dataframe 
 
-```{r}
+```{r, comment=""}
 # Parte 2: Prática com data.frame
 
 # criando o dataframe 
@@ -179,29 +190,28 @@ estudantes <- data.frame(
   curso = c("Ciência de Dados", "Engenharia", "Matemática", "Ciência da Computação", "Estatística"),
   nota_final = c(8.5, 5.0, 7.0, 9.0, 6.5)
 )
+print(estudantes)
 
-# estudantes que obtiveram **nota_final** maior ou igual a 7.0 
-# (utilize operadores relacionais para selecionar estudantes com **nota_final** maior ou igual a 7.0)
+# estudantes que obtiveram nota_final maior ou igual a 7
+estudantes[estudantes$nota_final >= 7, ]
 
-
-# estudantes com idade menor 
-# (use operadores lógicos para encontrar estudantes com idade menor que 25 anos e nota final maior ou igual a 7.0)
-  
+# estudantes com idade menor que 25 e nota maior ou igual a 7
+estudantes[estudantes$idade < 25 & estudantes$nota_final >= 7, ]
 
 # Parte 3: Análise e Manipulação de Dados
 # calculando a média das notas finais dos estudantes
+media_estudantes <- mean(estudantes$nota_final)
+print(media_estudantes)
 
 # adicionando uma nova coluna contendo TRUE para nota_final >= 7 e FALSE para os demais
-# nome data.frame: **estudantes** nome coluna: **aprovado**, que deve conter valores booleanos (**TRUE** para estudantes com nota final maior ou igual a 7 e **FALSE** para os demais).
-
+estudantes$aprovado <- estudantes$nota_final >= 7
+print(estudantes)
 
 # calculando porcentagem de estudantes aprovados no curso
 # Utilize operadores básicos para calcular a porcentagem de estudantes aprovados no curso.
-
-
-
-
-```
-
+num_aprovados <- sum(estudantes$aprovado)
+total_estudantes <- nrow(estudantes)
+porcentagem_aprovados <- (num_aprovados/total_estudantes)*100
+cat("Porcentagem de aprovados: ", porcentagem_aprovados, "%")
 
 ```
